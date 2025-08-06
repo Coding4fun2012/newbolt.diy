@@ -1,4 +1,4 @@
-import type { AppLoadContext } from '@remix-run/cloudflare';
+import type { EntryContext } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { isbot } from 'isbot';
 import { renderToReadableStream } from 'react-dom/server';
@@ -10,8 +10,8 @@ export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
-  remixContext: any,
-  _loadContext: AppLoadContext,
+  remixContext: EntryContext,
+  _loadContext: unknown,
 ) {
   // await initializeModelList({});
 
